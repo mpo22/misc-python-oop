@@ -3,6 +3,7 @@ from delegation.delegator import Delegator
 
 
 def test_forwarding():
+    """demonstrate a delegation"""
     # given
     delegator = Delegator(DelegateeImpl1())
     # when

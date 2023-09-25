@@ -16,11 +16,11 @@ def logging_config():
     see https://docs.python-guide.org/writing/logging/?highlight=logging
     """
     try:
-        with open("logging.json") as logging_json_stream:
+        with open("logging.json", encoding="utf-8") as logging_json_stream:
             logging.config.dictConfig(json.loads(logging_json_stream.read()))
 
     except Exception as error:
-        print('failed to load logging config file:', error)
+        print("failed to load logging config file:", error)
 
         logging.basicConfig(
             stream=sys.stdout,
@@ -32,11 +32,12 @@ def logging_config():
 
 
 def main():
+    """demonstration of a delegation"""
     logging_config()
 
     delegator = Delegator(DelegateeImpl1())
     result = delegator.service(1, 2)
-    logging.info(f"result={result}")
+    logging.info("result=%s", result)
     print(result)
 
 

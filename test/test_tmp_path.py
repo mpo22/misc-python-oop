@@ -1,3 +1,5 @@
+# pylint: skip-file
+
 """
 see https://docs.pytest.org/en/7.4.x/getting-started.html#request-a-unique-temporary-directory-for-functional-tests
 

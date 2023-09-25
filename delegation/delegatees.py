@@ -7,24 +7,25 @@ class Delegatee(metaclass=ABCMeta):
 
     def __init__(self):
         self._logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
-        self._logger.debug(f"{__class__.__name__} ctor")
+        self._logger.debug("%s ctor", __class__.__name__)
 
     @property
     def logger(self):
+        """logger getter"""
         return self._logger
 
     @abstractmethod
     def service(self, arg1, arg2):
-        pass
+        """pure virtual service method"""
 
 
 class DelegateeImpl1(Delegatee):
     """A dummy delegatee implementation"""
 
     def service(self, arg1, arg2):
-        self.logger.debug(f"{arg1} {arg2}")
+        self.logger.debug("%s %s", arg1, arg2)
         result = arg1 + arg2
-        self.logger.debug(f"{result}")
+        self.logger.debug("%s", result)
         return result
 
 
@@ -32,7 +33,7 @@ class DelegateeImpl2(Delegatee):
     """An adder operator"""
 
     def service(self, arg1, arg2):
-        self.logger.debug(f"{arg1} {arg2}")
+        self.logger.debug("%s %s", arg1, arg2)
         result = arg1 - arg2
-        self.logger.debug(f"{result}")
+        self.logger.debug("%s", result)
         return result
