@@ -3,8 +3,8 @@ import logging
 import logging.config
 import sys
 
-import delegation.delegatees
-import delegation.delegator
+from oop.core.service1.backward import BackwardImpl1
+from oop.core.service1.delegation import Delegator1
 
 
 def logging_config():
@@ -32,11 +32,11 @@ def logging_config():
 
 
 def main():
-    """demonstration of a delegation"""
+    """demonstration of a Service"""
     logging_config()
 
-    delegator = delegation.delegator.Delegator(delegation.delegatees.ReverseImpl())
-    result = delegator.service("42")
+    delegator = Delegator1(BackwardImpl1())
+    result = delegator.service1("42")
     logging.info("result=%s", result)
     print(result)
 

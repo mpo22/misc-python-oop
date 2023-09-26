@@ -1,9 +1,9 @@
 from abc import ABCMeta, abstractmethod
 
 
-class Service(metaclass=ABCMeta):
+class Service1(metaclass=ABCMeta):
     """A service interface"""
 
     @abstractmethod
-    def service(self, arg: str) -> str:
+    def service1(self, arg: str) -> str:
         """pure virtual service method"""

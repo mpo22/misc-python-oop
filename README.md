@@ -78,7 +78,7 @@ python -m pip install -U pylint
 ```
 
 ```bash
-python -m pylint delegation app test
+python -m pylint delegation app tests
 ```
 
 ### flake8 (???)
@@ -96,6 +96,10 @@ python -m pip install -U flake8
 python -m pip install -U pytest
 ```
 
+```bash
+python -m pytest
+```
+
 ### coverage
 
 - https://coverage.readthedocs.io/en/latest/
@@ -108,7 +112,7 @@ python -m pip install -U coverage
 python -m coverage run -m pytest
 python -m coverage report -m
 python -m coverage html
-/usr/bin/firefox htmlcov/index.html
+firefox htmlcov/index.html
 ```
 
 ### doc
@@ -161,6 +165,10 @@ python -m pip install -U flake8-for-pycharm
 
 
 - https://setuptools.pypa.io/en/latest/userguide/package_discovery.html
+
+- https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/
+- https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html
+=> flat layout is simple for in-development packages
 
 ### object-oriented design
 

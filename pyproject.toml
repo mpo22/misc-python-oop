@@ -8,5 +8,6 @@ target-version = ['py311']
 minversion = "6.0"
 addopts = "-ra -q"
 testpaths = [
-    "test"
+    "tests",
+    "oop/core/service1/tests"
 ]
