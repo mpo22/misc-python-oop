@@ -96,6 +96,21 @@ python -m pip install -U flake8
 python -m pip install -U pytest
 ```
 
+### coverage
+
+- https://coverage.readthedocs.io/en/latest/
+
+```bash
+python -m pip install -U coverage
+```
+
+```bash
+python -m coverage run -m pytest
+python -m coverage report -m
+python -m coverage html
+/usr/bin/firefox htmlcov/index.html
+```
+
 ### doc
 
 ```bash
@@ -121,6 +136,14 @@ https://gitlab.com/ramast/flake8-for-pycharm/ :
 python -m pip install -U flake8-for-pycharm
 ```
 
+#### test 
+
+- https://www.jetbrains.com/help/pycharm/pytest.html
+
+#### coveragev (only in PyCharm Professional)
+
+- https://www.jetbrains.com/help/pycharm/code-coverage.html
+
 ## resources
 
 ### reference
@@ -135,6 +158,9 @@ python -m pip install -U flake8-for-pycharm
 - [Pypa's sample Python project](https://github.com/pypa/sampleproject)
 - [Hitchhiker’s sample Module Repository](https://github.com/navdeep-G/samplemod)
 - https://pypi.org/project/python_boilerplate_template/
+
+
+- https://setuptools.pypa.io/en/latest/userguide/package_discovery.html
 
 ### object-oriented design
 

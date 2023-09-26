@@ -3,8 +3,8 @@ import logging
 import logging.config
 import sys
 
-from delegation.delegatees import DelegateeImpl1
-from delegation.delegator import Delegator
+import delegation.delegatees
+import delegation.delegator
 
 
 def logging_config():
@@ -35,8 +35,8 @@ def main():
     """demonstration of a delegation"""
     logging_config()
 
-    delegator = Delegator(DelegateeImpl1())
-    result = delegator.service(1, 2)
+    delegator = delegation.delegator.Delegator(delegation.delegatees.ReverseImpl())
+    result = delegator.service("42")
     logging.info("result=%s", result)
     print(result)
 

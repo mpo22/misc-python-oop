@@ -1,9 +1,15 @@
 import logging
-from abc import ABCMeta, abstractmethod
+from abc import abstractmethod
+
+from delegation.service import Service
 
 
-class Delegatee(metaclass=ABCMeta):
+class Delegatee(Service):
     """A dummy delegatee abstract base class"""
+
+    @abstractmethod
+    def service(self, arg: str) -> str:
+        pass
 
     def __init__(self):
         self._logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
@@ -14,26 +20,22 @@ class Delegatee(metaclass=ABCMeta):
         """logger getter"""
         return self._logger
 
-    @abstractmethod
-    def service(self, arg1, arg2):
-        """pure virtual service method"""
 
-
-class DelegateeImpl1(Delegatee):
+class ReverseImpl(Delegatee):
     """A dummy delegatee implementation"""
 
-    def service(self, arg1, arg2):
-        self.logger.debug("%s %s", arg1, arg2)
-        result = arg1 + arg2
+    def service(self, arg: str) -> str:
+        self.logger.debug("%s ", arg)
+        result = arg[::-1]
         self.logger.debug("%s", result)
         return result
 
 
-class DelegateeImpl2(Delegatee):
-    """An adder operator"""
+class UnchangeImpl(Delegatee):
+    """Another dummy delegatee implementation"""
 
-    def service(self, arg1, arg2):
-        self.logger.debug("%s %s", arg1, arg2)
-        result = arg1 - arg2
+    def service(self, arg: str) -> str:
+        self.logger.debug("%s", arg)
+        result = arg
         self.logger.debug("%s", result)
         return result
