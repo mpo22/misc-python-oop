@@ -1,4 +1,4 @@
-from oop.core.service1.delegation import Delegatee1
+from .delegation import Delegatee1
 
 
 class BackwardImpl1(Delegatee1):

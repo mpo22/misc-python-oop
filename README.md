@@ -170,6 +170,9 @@ python -m pip install -U flake8-for-pycharm
 - https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html
 => flat layout is simple for in-development packages
 
+
+- [PEP 20 – The Zen of Python](https://peps.python.org/pep-0020/)
+
 ### object-oriented design
 
 - [SOLID](https://en.wikipedia.org/wiki/SOLID)
@@ -178,6 +181,14 @@ python -m pip install -U flake8-for-pycharm
 
 - [Design patterns](https://refactoring.guru/design-patterns/python)
 - [DI](https://python-dependency-injector.ets-labs.org/)
+
+### plugins
+
+- https://packaging.python.org/en/latest/guides/creating-and-discovering-plugins/
+
+
+- https://mwax911.medium.com/building-a-plugin-architecture-with-python-7b4ab39ad4fc
+
 
 ### test
 

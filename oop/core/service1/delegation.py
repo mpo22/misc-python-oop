@@ -1,7 +1,7 @@
 import logging
 from abc import abstractmethod
 
-from oop.core.service1.interface import Service1
+from .interface import Service1
 
 
 class Delegator1(Service1):

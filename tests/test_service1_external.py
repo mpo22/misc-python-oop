@@ -1,8 +1,8 @@
 from pytest_mock import MockerFixture
 
-from oop.core.service1.backward import BackwardImpl1
-from oop.core.service1.delegation import Delegator1, Delegatee1
-from oop.core.service1.forward import ForwardImpl1
+from oop.core.service1 import BackwardImpl1
+from oop.core.service1 import Delegator1, Delegatee1
+from oop.core.service1 import ForwardImpl1
 
 
 def test_backward_impl():
