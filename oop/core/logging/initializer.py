@@ -18,8 +18,8 @@ class Initializer:
             with open(json_config_file, encoding="utf-8") as logging_json_stream:
                 logging.config.dictConfig(json.loads(logging_json_stream.read()))
 
-        except Exception as error:
-            print("failed to load logging config file:", error)
+        except Exception as exception:
+            print("failed to load logging config file:", exception)
 
             logging.basicConfig(
                 stream=sys.stdout,

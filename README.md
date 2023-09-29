@@ -2,9 +2,18 @@
 
 ## setup
 
-```bash
-sudo dnf -y install python3 python3-devel python3-devtools
-```
+system wide python install:
+
+- fedora
+  ```bash
+  sudo dnf -y install python3 python3-devel python3-devtools
+  ```
+- debian/ubuntu
+  ```bash
+  sudo apt-get install python3-dev python3-setuptools
+  ```
+
+virtual env:
 
 ```bash
 python3 -m venv .venv
@@ -87,6 +96,9 @@ python -m pylint delegation app tests
 python -m pip install -U flake8
 ```
 
+```bash
+python -m flake8 .
+```
 ### test
 
 - https://pytest.org
@@ -110,8 +122,8 @@ python -m pip install -U coverage
 
 ```bash
 python -m coverage run -m pytest
-python -m coverage report -m
-python -m coverage html
+python -m coverage report --show-missing --omit="*test*"
+python -m coverage html --omit="*test*"
 firefox htmlcov/index.html
 ```
 
@@ -140,7 +152,7 @@ https://gitlab.com/ramast/flake8-for-pycharm/ :
 python -m pip install -U flake8-for-pycharm
 ```
 
-#### test 
+#### test
 
 - https://www.jetbrains.com/help/pycharm/pytest.html
 
@@ -168,7 +180,7 @@ python -m pip install -U flake8-for-pycharm
 
 - https://packaging.python.org/en/latest/discussions/src-layout-vs-flat-layout/
 - https://www.pyopensci.org/python-package-guide/package-structure-code/python-package-structure.html
-=> flat layout is simple for in-development packages
+  => flat layout is simple for in-development packages
 
 
 - [PEP 20 – The Zen of Python](https://peps.python.org/pep-0020/)
@@ -189,7 +201,6 @@ python -m pip install -U flake8-for-pycharm
 
 - https://mwax911.medium.com/building-a-plugin-architecture-with-python-7b4ab39ad4fc
 
-
 ### test
 
 - [Python Testing Tools Taxonomy](https://wiki.python.org/moin/PythonTestingToolsTaxonomy)
@@ -204,3 +215,29 @@ python -m pip install -U flake8-for-pycharm
 - https://www.martinfowler.com/articles/mocksArentStubs.html
 - https://www.ankursheel.com/blog/difference-stubs-mocks-fakes-spies
 - https://stackoverflow.com/questions/346372/whats-the-difference-between-faking-mocking-and-stubbing
+
+## gui
+
+### tkinter
+
+- https://docs.python.org/3/library/tkinter.html
+
+- https://tkdocs.com/tutorial/index.html
+
+### custom tkinter
+
+- https://customtkinter.tomschimansky.com
+- https://github.com/TomSchimansky/CustomTkinter/
+
+system wide dependencies install:
+
+- fedora
+  https://pillow.readthedocs.io/en/latest/installation.html#codecell12
+
+```bash
+python -m pip install -U customtkinter
+```
+
+```bash
+python -m customtkinter
+```

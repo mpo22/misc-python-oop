@@ -6,7 +6,7 @@ from oop.core.service1 import Service1Delegator
 
 
 def main():
-    """demonstration of a Service"""
+    """dummy cli application"""
 
     LoggingInitializer().setup()
 
