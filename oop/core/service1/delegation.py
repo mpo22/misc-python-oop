@@ -4,7 +4,7 @@ from abc import abstractmethod
 from .interface import Service1
 
 
-class Delegator1(Service1):
+class Delegator:
     """A dummy delegator"""
 
     def __init__(self, delegatee: Service1):
@@ -12,7 +12,7 @@ class Delegator1(Service1):
         self.logger.debug("delegatee=%s", delegatee)
         self.delegatee = delegatee
 
-    def service1(self, arg: str) -> str:
+    def method1(self, arg: str) -> str:
         """forwards the call to the delegatee"""
         self.logger.debug("%s", arg)
         result = self.delegatee.service1(arg)
@@ -20,7 +20,7 @@ class Delegator1(Service1):
         return result
 
 
-class Delegatee1(Service1):
+class Delegatee(Service1):
     """A dummy delegatee abstract base class"""
 
     @abstractmethod

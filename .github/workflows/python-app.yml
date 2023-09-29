@@ -42,4 +42,4 @@ jobs:
       - name: Coverage with pytest
         run: |
           python -m coverage run -m pytest
-          python -m coverage report -m --fail-under=80
+          python -m coverage report --show-missing --omit="*test*" --fail-under=80

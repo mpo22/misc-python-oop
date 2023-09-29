@@ -1,7 +1,7 @@
-from .delegation import Delegatee1
+from .delegation import Delegatee
 
 
-class ForwardImpl1(Delegatee1):
+class ForwardDelegatee(Delegatee):
     """A dummy delegatee implementation"""
 
     def service1(self, arg: str) -> str:
